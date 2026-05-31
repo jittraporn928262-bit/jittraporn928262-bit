@@ -1,16 +1,35 @@
-## Hi there 👋
+--
+layout: home
+title: จิตราภรณ์ ไกรตรวจพล
+permalink: /
+---
 
-<!--
-**jittraporn928262-bit/jittraporn928262-bit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# สวัสดี ฉันชื่อ นางสาวจิตราภรณ์ ไกรตรวจพล 🌈
+- อายุ 22 ปี
+- เกิดวันที่ 20 กุมภาพันธ์ 2547
+![โปรไฟล์](images/รูปสมัครงาน.jpg)
 
-Here are some ideas to get you started:
+---
+## สถานที่ทำงาน
+- ห้างหุ้นส่วนจำกัด เกษมเพ้นท์ดีโป้
+- ตำแหน่ง Admin , เปิดบิล
+## 🍓 ประวัติส่วนตัว
+- กำลังศึกษาอยู่ระดับปริญญาตรี
+- สาขาเทคโนโลยีสารสนเทศ
+- สถาบันอาชีวะกลาง 5 วิทยาลัยเทคนิคสมุทรสาคร
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🍋 ความสนใจ
+
+- ☕ ทำร้านเบเกอร์รี่
+
+---
+
+## 🍇 งานอดิเรก
+
+- 🎵 ฟังเพลง
+- 🎬 ดูหนัง
+- ✈️ ท่องเที่ยว
+
+---
