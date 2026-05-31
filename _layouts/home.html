@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>จิตราภรณ์ ไกรตรวจพล</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    :root {
+      --g50:  #edfaf3;
+      --g100: #c6f0d8;
+      --g200: #9fe5bc;
+      --g300: #6dd4a0;
+      --g400: #3ebe84;
+      --g500: #27a36b;
+      --g600: #1c8256;
+      --g700: #116240;
+      --g800: #08422b;
+      --g900: #022318;
+    }
+ 
+    body {
+      font-family: 'Sarabun', sans-serif;
+      min-height: 100vh;
+      background: #f5fdf8;
+      color: #2a3d33;
+    }
+ 
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(157,229,188,0.12) 0px,
+        rgba(157,229,188,0.12) 40px,
+        rgba(198,240,216,0.10) 40px,
+        rgba(198,240,216,0.10) 80px,
+        rgba(237,250,243,0.15) 80px,
+        rgba(237,250,243,0.15) 120px,
+        rgba(109,212,160,0.08) 120px,
+        rgba(109,212,160,0.08) 160px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+ 
+    .wrap { position: relative; z-index: 1; }
+ 
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #9fe5bc, #6dd4a0, #3ebe84, #27a36b, #9fe5bc);
+    }
+ 
+    header {
+      background: rgba(237,250,243,0.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(62,190,132,0.18);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+ 
+    .logo {
+      font-family: 'Mitr', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--g700);
+    }
+ 
+    header nav a {
+      font-size: 0.88rem;
+      color: var(--g600);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--g200);
+      background: white;
+    }
+ 
+    main {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+ 
+    .hero {
+      background: white;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--g100);
+      box-shadow: 0 4px 24px rgba(62,190,132,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #9fe5bc, #6dd4a0, #3ebe84, #27a36b, #9fe5bc);
+    }
+ 
+    .hero img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid transparent;
+      background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #9fe5bc, #3ebe84, #27a36b) border-box;
+      margin-bottom: 1.2rem;
+    }
+ 
+    .hero h1 {
+      font-family: 'Mitr', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: var(--g700);
+      margin-bottom: 0.3rem;
+    }
+ 
+    .hero .role {
+      font-size: 0.88rem;
+      color: var(--g500);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+ 
+    .hero .bio {
+      display: inline-block;
+      font-size: 0.92rem;
+      color: var(--g700);
+      line-height: 1.9;
+      background: var(--g50);
+      border-radius: 16px;
+      padding: 0.8rem 1.4rem;
+      border: 1px dashed var(--g200);
+      text-align: left;
+    }
+ 
+    .card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--g100);
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 16px rgba(62,190,132,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      border-radius: 20px 0 0 20px;
+      background: linear-gradient(180deg, var(--g300), var(--g500));
+    }
+ 
+    .section-title {
+      font-family: 'Mitr', sans-serif;
+      font-size: 0.98rem;
+      color: var(--g700);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1.5px dashed var(--g100);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+ 
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--g400);
+    }
+ 
+    p, li {
+      line-height: 1.9;
+      color: var(--g700);
+      font-size: 0.93rem;
+    }
+ 
+    ul { padding-left: 1.3rem; }
+    ul li { margin-bottom: 0.4rem; }
+    ul li::marker { color: var(--g400); }
+ 
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+ 
+    .hobby-item {
+      background: var(--g50);
+      border: 1px solid var(--g100);
+      border-radius: 14px;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--g700);
+    }
+ 
+    .hobby-item .emoji { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+ 
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+ 
+    .tag {
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 0.84rem;
+      background: var(--g50);
+      color: var(--g700);
+      border: 1px solid var(--g200);
+    }
+ 
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      background: var(--g50);
+      border: 1px solid var(--g100);
+      font-size: 0.93rem;
+      color: var(--g700);
+    }
+ 
+    .contact-row a { color: var(--g600); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+ 
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.83rem;
+      color: var(--g500);
+      letter-spacing: 0.05em;
+    }
+ 
+    .footer-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #9fe5bc, #6dd4a0, #3ebe84, #27a36b, #9fe5bc);
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+ 
+  <div class="top-bar"></div>
+ 
+  <header>
+    <div class="logo">🌿 จิตราภรณ์ ไกรตรวจพล</div>
+    <nav><a href="#">หน้าหลัก</a></nav>
+  </header>
+ 
+  <main>
+ 
+    <div class="hero">
+      <img src="images/รูปสมัครงาน.jpg" alt="โปรไฟล์">
+      <h1>นางสาวจิตราภรณ์ ไกรตรวจพล</h1>
+      <div class="role">✨ เทคโนโลยีสารสนเทศ · ปริญญาตรี ✨</div>
+      <div class="bio">
+        กำลังศึกษาระดับปริญญาตรี สาขาเทคโนโลยีสารสนเทศ<br>
+        สถาบันอาชีวะกลาง 5 วิทยาลัยเทคนิคสมุทรสาคร<br>
+        💼 ห้างหุ้นส่วนจำกัด เกษมเพ้นท์ดีโป้ · Admin / เปิดบิล<br>
+        🎂 อายุ 22 ปี · เกิด 20 กุมภาพันธ์ 2547
+      </div>
+    </div>
+ 
+    <div class="card">
+      <div class="section-title">
+        <span class="dot"></span> ความสนใจ
+      </div>
+      <div class="tags">
+        <span class="tag">🍰 ทำร้านเบเกอร์รี่</span>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <div class="section-title">
+        <span class="dot"></span> งานอดิเรก
+      </div>
+      <div class="hobby-grid">
+        <div class="hobby-item"><span class="emoji">🎵</span>ฟังเพลง</div>
+        <div class="hobby-item"><span class="emoji">🎬</span>ดูหนัง</div>
+        <div class="hobby-item"><span class="emoji">✈️</span>ท่องเที่ยว</div>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <div class="section-title">
+        <span class="dot"></span> ติดต่อ
+      </div>
+      <div class="contact-row">
+        🐙 <a href="https://github.com/Jitsupa2004">github.com/Jitsupa2004</a>
+      </div>
+    </div>
+ 
+  </main>
+ 
+  <div class="footer-bar"></div>
+  <footer>🌿 made with ♡ · จิตราภรณ์ ไกรตรวจพล</footer>
+ 
+</div>
+</body>
+</html>
+ 
