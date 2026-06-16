@@ -244,6 +244,69 @@
  
     .contact-row a { color: var(--g600); text-decoration: none; }
     .contact-row a:hover { text-decoration: underline; }
+
+    /* keyword cards */
+    .kw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .kw-card {
+      background: var(--g50);
+      border: 1px solid var(--g100);
+      border-radius: 16px;
+      padding: 1rem;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .kw-card:hover {
+      background: var(--g100);
+      border-color: var(--g300);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(62,190,132,0.15);
+    }
+
+    .kw-num {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      color: var(--g400);
+      margin-bottom: 5px;
+    }
+
+    .kw-name {
+      font-family: 'Mitr', sans-serif;
+      font-size: 1rem;
+      color: var(--g700);
+      margin-bottom: 3px;
+    }
+
+    .kw-cat {
+      font-size: 0.78rem;
+      color: var(--g500);
+    }
+
+    .kw-arrow {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      color: var(--g300);
+      font-size: 14px;
+      transition: transform 0.2s;
+    }
+
+    .kw-card:hover .kw-arrow { transform: translateX(3px); }
+
+    .kw-note {
+      font-size: 0.82rem;
+      color: var(--g400);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
  
     footer {
       text-align: center;
@@ -302,6 +365,33 @@
         <div class="hobby-item"><span class="emoji">✈️</span>ท่องเที่ยว</div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="section-title">
+        <span class="dot"></span> คำสำคัญด้าน IT
+      </div>
+      <div class="kw-grid">
+        <a class="kw-card" href="https://jittraporn928262-bit.github.io/Hardware">
+          <div class="kw-num">01</div>
+          <div class="kw-name">Hardware</div>
+          <div class="kw-cat">Computer Components</div>
+          <span class="kw-arrow">→</span>
+        </a>
+        <a class="kw-card" href="https://jittraporn928262-bit.github.io/Firmware">
+          <div class="kw-num">02</div>
+          <div class="kw-name">Firmware</div>
+          <div class="kw-cat">Embedded Software</div>
+          <span class="kw-arrow">→</span>
+        </a>
+        <a class="kw-card" href="https://jittraporn928262-bit.github.io/EdgeGateway">
+          <div class="kw-num">03</div>
+          <div class="kw-name">Edge Gateway</div>
+          <div class="kw-cat">IoT / Edge Computing</div>
+          <span class="kw-arrow">→</span>
+        </a>
+      </div>
+      <div class="kw-note">🌿 คลิกที่การ์ดเพื่ออ่านรายละเอียดแต่ละคำ</div>
+    </div>
  
     <div class="card">
       <div class="section-title">
@@ -320,4 +410,3 @@
 </div>
 </body>
 </html>
- 
